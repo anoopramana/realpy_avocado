@@ -1,0 +1,52 @@
+Pandas = python library for data analysis
+Numpy = ibrary for scientific computing
+Matplotlib = 2d plotting
+Scikitlearn = machine learning
+
+#READING CSV FILES
+
+pd.read_csv('filepath')    # Read the CSV file
+
+pd.read_csv("filepath", index_col="...")     # Read the CSV file and assign the index column
+
+usecols = ["id", "...", "..." etc]      # Create an object with interested column names
+pd.read_csv("filepath", usecols=usecols)   # Read the CSV file with only a selection of columns
+
+df = pd.read_csv('filepath')  # Read the CSV file and store in a data frame
+
+#PREVIEWING DATA
+print(df)    # Print dataframe *Use datawrangler by clicking option before pressing enter 
+df.head      # View the first 5 rows
+
+
+#SUMMARIZING DATA
+df.info()    # View each column and dtype
+df.describe()   # Summary statistics
+df.columns   # View a list of all the columns
+df.count()   # Count values in every column
+df.shape()   # Number of rows and columns in dataframe
+
+df.iloc[[0],[0]]    # Identify several elements in df
+
+df["column"]     # Select a column
+
+region = df.loc[df["column"] == "value", "another column or columns"]     #Filtering data based on conditions
+
+df[2:7]      # Select rows 2 to 6 only
+
+above_35 = df[df["Age"] > 35]     # Select rows based on conditional expression (>, ==, !=, <, <=)
+above_35.head()
+
+class_23 = df[df["class"].isin([2, 3])]    # Select rows based on a column given explicit values
+class_23.head()
+
+age_notna = df[["Age"].notna()]      # Select data removing rows where a column value is null
+
+df = pd.read_csv('filename", na_values=[" "])    # Read CSV file and determine what to recognize as na/NaN values
+
+df["newcolumn"] = df["existingcolumn"] * 1.8     # Add new columns 
+
+df.drop_duplicates()      # Removes rows from duplicates
+
+Matplotlib
+
